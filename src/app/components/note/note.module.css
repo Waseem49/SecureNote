@@ -1,0 +1,33 @@
+/* .main {
+  width: 100dvw;
+  height: 100dvh;
+} */
+/* .note_main {
+  background-image: linear-gradient(to bottom right, black, blue);
+  width: 100dvw;
+  height: calc(100dvh - 3rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.inputfield {
+  width: 50%;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.inputfield input[type="text"] {
+  width: 70%;
+  height: 3rem;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+.inputfield input[type="submit"] {
+  width: 20%;
+  height: 3rem;
+  border-radius: 2rem;
+  font-size: 1.3rem;
+}
