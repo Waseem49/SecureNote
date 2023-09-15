@@ -1,15 +1,11 @@
 .navbar_main {
   height: 3rem;
-  background-image: linear-gradient(
-    to right bottom,
-    rgba(17, 86, 234, 0.774),
-    rgba(212, 18, 199, 0.811)
-  );
+  background-image: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 3rem;
-  color: rgb(219, 208, 187);
-  font-size: 22px;
-  font-weight: 500;
+  color: bisque;
+  font-size: 18px;
+  font-weight: 400;
 }

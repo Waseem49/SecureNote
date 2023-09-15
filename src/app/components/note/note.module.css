@@ -1,33 +1,99 @@
-/* .main {
-  width: 100dvw;
-  height: 100dvh;
-} */
-/* .note_main {
-  background-image: linear-gradient(to bottom right, black, blue);
-  width: 100dvw;
-  height: calc(100dvh - 3rem);
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+  min-height: calc(100vh - 5.5rem);
+  background: transparent;
+}
+
+/* Note container styles */
+.note_main {
+  background-color: rgba(255, 228, 196, 0.348);
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  padding: 20px;
+}
+@media all and (min-width: 700px) and (max-width: 1000px) {
+  .note_main {
+    width: 60%;
+  }
+}
+@media all and (min-width: 1001px) {
+  .note_main {
+    width: 50%;
+  }
+}
+/* Input field styles */
 .inputfield {
-  width: 50%;
-  height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.inputfield input[type="text"] {
-  width: 70%;
-  height: 3rem;
-  border-radius: 2rem;
-  font-size: 1.5rem;
-  padding: 0 1rem;
+  gap: 5px;
+  margin-bottom: 20px;
 }
 
-.inputfield input[type="submit"] {
-  width: 20%;
-  height: 3rem;
-  border-radius: 2rem;
-  font-size: 1.3rem;
+.inputfield input[type="text"] {
+  flex-grow: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.796);
+  color: bisque;
+  outline: none;
+}
+.inputfield input[type="text"]::placeholder {
+  color: rgba(255, 228, 196, 0.67);
+}
+
+.inputfield button {
+  background-color: black;
+  color: rgba(255, 228, 196, 0.916);
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.inputfield button:hover {
+  background-color: rgba(255, 228, 196, 0.818);
+  color: black;
+}
+
+/* Note item styles */
+.note_list > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #050505;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+.note_list > div > :nth-child(1) {
+  flex-grow: 1;
+  font-weight: 600;
+  color: black;
+  text-transform: capitalize;
+}
+.note_list > div > button {
+  background-color: black;
+  color: rgba(255, 228, 196, 0.916);
+  font-weight: 100;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-left: 5px;
+}
+
+.note_list button:nth-child(2):hover {
+  background-color: #e20000;
+}
+.note_list button:nth-child(3):hover {
+  background-color: #07952d;
 }

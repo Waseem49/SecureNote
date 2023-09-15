@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "@/app/components/note/note.module.css";
 
 const Note = () => {
+  //const url="https://note-app-waseem49.vercel.app/https://note-app-waseem49.vercel.app/"
   const [note, setNote] = useState("");
   const [notes, setNotes] = useState([]);
   const [id, setId] = useState("");
@@ -109,10 +110,10 @@ const Note = () => {
             {id === "" ? "ADD" : "UPDATE"}
           </button>
         </div>
-        <div>
+        <div className={styles.note_list}>
           {notes.map((note) => (
             <div key={note._id}>
-              {note.note}
+              <h3>{note.note}</h3>
               <button onClick={() => handleDelete(note._id)}>Delete</button>
               <button onClick={() => handleEdit(note._id)}>Edit</button>
             </div>
