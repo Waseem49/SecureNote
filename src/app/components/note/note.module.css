@@ -16,6 +16,9 @@
   overflow-y: scroll;
   padding: 20px;
 }
+.note_main::-webkit-scrollbar {
+  display: none;
+}
 @media all and (min-width: 700px) and (max-width: 1000px) {
   .note_main {
     width: 60%;
