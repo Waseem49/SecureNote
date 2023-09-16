@@ -12,7 +12,8 @@ export const POST = async (req) => {
       { status: 201 }
     );
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
+    return NextResponse.error("Internal Server Error", { status: 500 });
   }
 };
 

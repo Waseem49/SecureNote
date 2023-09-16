@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import styles from "@/app/components/note/note.module.css";
 
 const Note = () => {
-  //const url="https://note-app-waseem49.vercel.app/https://note-app-waseem49.vercel.app/"
+  //const url="https://note-app-waseem49.vercel.app/"
   const [note, setNote] = useState("");
   const [notes, setNotes] = useState([]);
   const [id, setId] = useState("");
 
   const fetchData = async () => {
     try {
-      const res = await fetch("https://note-app-waseem49.vercel.app/api/note");
+      const res = await fetch("http://localhost:3000/api/note");
       if (!res.ok) {
         throw new Error("Failed to fetch data");
       }
@@ -28,16 +28,13 @@ const Note = () => {
   const handleAddOrUpdate = async () => {
     if (!id) {
       try {
-        const res = await fetch(
-          "https://note-app-waseem49.vercel.app/api/note",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ note }),
-          }
-        );
+        const res = await fetch("http://localhost:3000/api/note", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ note }),
+        });
 
         if (!res.ok) {
           throw new Error("Failed to add note");
@@ -49,16 +46,13 @@ const Note = () => {
       }
     } else {
       try {
-        const res = await fetch(
-          `https://note-app-waseem49.vercel.app/api/note/${id}`,
-          {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ note }),
-          }
-        );
+        const res = await fetch(`http://localhost:3000/api/note/${id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ note }),
+        });
 
         if (!res.ok) {
           throw new Error("Failed to update note");
@@ -74,7 +68,7 @@ const Note = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`https://note-app-waseem49.vercel.app/api/note/${id}`, {
+      await fetch(`http://localhost:3000/api/note/${id}`, {
         method: "DELETE",
       });
       fetchData();
@@ -85,9 +79,7 @@ const Note = () => {
 
   const handleEdit = async (id) => {
     try {
-      const res = await fetch(
-        `https://note-app-waseem49.vercel.app/api/note/${id}`
-      );
+      const res = await fetch(`http://localhost:3000/api/note/${id}`);
       const data = await res.json();
       setNote(data.data.note);
       setId(id);
