@@ -24,7 +24,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch(
-      "https://note-app-waseem49.vercel.app//api/auth/register",
+      "https://note-app-waseem49.vercel.app/api/auth/register",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
