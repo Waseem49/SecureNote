@@ -1,0 +1,90 @@
+/* login.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://c1.wallpaperflare.com/preview/23/1024/863/moon-universe-space-milky-way.jpg");
+  height: 100dvh; /* Black background */
+}
+
+.form {
+  background-color: rgba(255, 228, 196, 0.297);
+  border-radius: 8px;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media all and (min-width: 700px) and (max-width: 1000px) {
+  .form {
+    width: 60%;
+  }
+}
+@media all and (min-width: 1001px) {
+  .form {
+    width: 50%;
+  }
+}
+
+.form h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form div {
+  margin-bottom: 20px;
+}
+.form div:nth-child(3) {
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form div:nth-child(3) > div {
+  margin: auto;
+  text-decoration: underline;
+}
+.form label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.form input[type="text"],
+.form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.796);
+  color: bisque;
+  outline: none;
+}
+
+.form input[type="password"]::placeholder {
+  color: rgba(255, 228, 196, 0.67);
+}
+.form input[type="text"]::placeholder {
+  color: rgba(255, 228, 196, 0.67);
+}
+.form button {
+  background-color: black;
+  color: rgba(255, 228, 196, 0.916);
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+  padding: 6px 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form button:hover {
+  color: black;
+}
+
+/* Add media queries for responsiveness if needed */

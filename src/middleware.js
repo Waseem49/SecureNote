@@ -1,38 +1,27 @@
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
-// export const middleware = async (req) => {
-//   console.log(req);
-//   // const token = await req.headers.authorization?.split(" ")[1];
-//   // if (!token) {
-//   //   return NextResponse.json({ message: "Unauthorized: Missing token." });
-//   // }
-//   // try {
-//   //   const decoded = jwt.verify(token, "note_app");
-//   //   req.username = decoded.userid.username;
-//   //   NextResponse.next();
-//   // } catch (error) {
-//   //   return NextResponse.json({ message: "Unauthorized: Invalid token." });
-//   // }
-// };
-
-// export const config = {
-//   matcher: "/about",
-// };
-
-// This function can be marked `async` if using `await` inside
 export async function middleware(request) {
-  console.log(request.headers);
-  // return NextResponse.redirect(new URL("/", request.url));
+  const token = await request.cookies.get("auth_token")?.value;
+  if (token) {
+    try {
+      // const decoded = await jwt.verify(token, process.env.SECRET_KEY);
+      // console.log(decoded);
+      // return NextResponse.rewrite(new URL("/", request.url));
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    return NextResponse.redirect(new URL("/auth/login", request.url));
+  }
 }
-
-// See "Matching Paths" below to learn more
 export const config = {
-  matcher: "/about",
+  // matcher: ["/", "/api/:path*"],
+  matcher: ["/"],
 };
+
 // const verifyUserToken = (req, res, next) => {
 //   const token = req.headers.authorization?.split(" ")[1];
-
 //   if (!token) {
 //     return res.status(401).json({ error: "Unauthorized: Missing token." });
 //   }

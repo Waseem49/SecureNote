@@ -8,19 +8,22 @@ import jwt from "jsonwebtoken";
 export const POST = async (req) => {
   try {
     const { email, password } = await req.json();
-    console.log(email, password);
     const User = await userModal.findOne({ email: email });
-    console.log(User);
     if (User !== null) {
       await connectDB();
       const passwordmatched = bcryptjs.compareSync(password, User.password);
       if (passwordmatched) {
-        var token = jwt.sign({ foo: "bar" }, "note_app");
-        console.log(token);
-        return NextResponse.json(
+        var token = jwt.sign(
+          { _id: User._id, name: User.name },
+          process.env.SECRET_KEY
+        );
+        const response = NextResponse.json(
           { message: "Login Successfully", token: token },
           { status: 201 }
         );
+
+        response.cookies.set("auth_token", token, { expiresIn: "1d" });
+        return response;
       } else {
         return NextResponse.json(
           { message: "Wrong Credential" },

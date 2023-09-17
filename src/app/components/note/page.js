@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "@/app/components/note/note.module.css";
 
 const Note = () => {
@@ -7,10 +7,12 @@ const Note = () => {
   const [note, setNote] = useState("");
   const [notes, setNotes] = useState([]);
   const [id, setId] = useState("");
+  const [scrollHeight, setScrollHeight] = useState(0);
+  const divref = useRef();
 
   const fetchData = async () => {
     try {
-      const res = await fetch("https://note-app-waseem49.vercel.app/api/note");
+      const res = await fetch("http://localhost:3000/api/note");
       if (!res.ok) {
         throw new Error("Failed to fetch data");
       }
@@ -21,23 +23,28 @@ const Note = () => {
     }
   };
 
+  const control = () => {
+    setScrollHeight(divref?.current?.scrollHeight);
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    divref.current.addEventListener("scroll", control);
+  }, [scrollHeight]);
+
   const handleAddOrUpdate = async () => {
     if (!id) {
       try {
-        const res = await fetch(
-          "https://note-app-waseem49.vercel.app/api/note",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ note }),
-          }
-        );
+        const res = await fetch("http://localhost:3000/api/note", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ note }),
+        });
 
         if (!res.ok) {
           throw new Error("Failed to add note");
@@ -49,16 +56,13 @@ const Note = () => {
       }
     } else {
       try {
-        const res = await fetch(
-          `https://note-app-waseem49.vercel.app/api/note/${id}`,
-          {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ note }),
-          }
-        );
+        const res = await fetch(`http://localhost:3000/api/note/${id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ note }),
+        });
 
         if (!res.ok) {
           throw new Error("Failed to update note");
@@ -70,24 +74,24 @@ const Note = () => {
         console.error("Error updating note:", error);
       }
     }
+    control();
   };
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`https://note-app-waseem49.vercel.app/api/note/${id}`, {
+      await fetch(`http://localhost:3000/api/note/${id}`, {
         method: "DELETE",
       });
       fetchData();
     } catch (error) {
       console.error("Error deleting note:", error);
     }
+    control();
   };
 
   const handleEdit = async (id) => {
     try {
-      const res = await fetch(
-        `https://note-app-waseem49.vercel.app/api/note/${id}`
-      );
+      const res = await fetch(`http://localhost:3000/api/note/${id}`);
       const data = await res.json();
       setNote(data.data.note);
       setId(id);
@@ -98,8 +102,8 @@ const Note = () => {
 
   return (
     <div className={styles.main}>
-      <div className={styles.note_main}>
-        <div className={styles.inputfield}>
+      <div className={styles.note_main} ref={divref}>
+        <div className={scrollHeight > 461 ? styles.shadow : styles.inputfield}>
           <input
             type="text"
             placeholder="Enter note"
