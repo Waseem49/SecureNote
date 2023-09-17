@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "@/app/auth/register/register.module.css";
 
-const Login = () => {
+const Register = () => {
   const router = useRouter();
   const initialState = {
     name: "",
@@ -11,7 +11,6 @@ const Login = () => {
     password: "",
   };
   const [user, setUser] = useState(initialState);
-  console.log(user);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -80,4 +79,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

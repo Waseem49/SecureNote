@@ -11,7 +11,6 @@ const Login = () => {
     password: "",
   };
   const [user, setUser] = useState(initialState);
-  console.log(user);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,7 +33,6 @@ const Login = () => {
     if (res.ok) {
       router.push("/");
     }
-
     console.log("Login submitted:", user);
   };
 
