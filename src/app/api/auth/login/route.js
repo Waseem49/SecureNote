@@ -8,7 +8,7 @@ import jwt from "jsonwebtoken";
 export const POST = async (req) => {
   try {
     const { email, password } = await req.json();
-    const User = await userModal.findOne({ email: email });
+    const User = await userModal.findOne({ email: email }).maxTimeMS(30000);
     if (User !== null) {
       await connectDB();
       const passwordmatched = bcryptjs.compareSync(password, User.password);
@@ -25,13 +25,10 @@ export const POST = async (req) => {
         response.cookies.set("auth_token", token, { expiresIn: "1d" });
         return response;
       } else {
-        return NextResponse.json(
-          { message: "Wrong Credential" },
-          { status: 201 }
-        );
+        return NextResponse.json({ message: "Wrong Credential" });
       }
     } else {
-      return NextResponse.json({ message: "User not found" }, { status: 404 });
+      return NextResponse.json({ message: "User not found" });
     }
   } catch (error) {
     console.error(error.message);

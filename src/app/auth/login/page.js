@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "@/app/auth/login/login.module.css";
 import Link from "next/link";
+import { MyContext } from "@/app/context/contextapi";
 
 const Login = () => {
   const router = useRouter();
@@ -11,7 +12,7 @@ const Login = () => {
     password: "",
   };
   const [user, setUser] = useState(initialState);
-
+  const { setAuth } = useContext(MyContext);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({
@@ -30,10 +31,17 @@ const Login = () => {
         body: JSON.stringify(user),
       }
     );
-    if (res.ok) {
+    const data = await res.json();
+    if (data?.message === "Login Successfully") {
+      setAuth(data.token);
       router.push("/");
     }
-    console.log("Login submitted:", user);
+    if (data?.message === "User not found") {
+      alert("User not found");
+    } else if (data?.message === "Wrong Credential") {
+      alert("Wrong Credential");
+    }
+    setUser(initialState);
   };
 
   return (
@@ -61,6 +69,7 @@ const Login = () => {
               placeholder="Enter your password"
             />
           </div>
+
           <div>
             <button type="submit">Login</button>
             <div>

@@ -25,6 +25,7 @@
 }
 @media all and (min-width: 1001px) {
   .form {
+    height: 65dvh;
     width: 50%;
   }
 }

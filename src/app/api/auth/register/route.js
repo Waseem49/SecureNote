@@ -8,7 +8,6 @@ export const POST = async (req) => {
   try {
     const { name, email, password } = await req.json();
     const existingUser = await userModal.findOne({ email: email });
-    console.log(existingUser);
     if (existingUser === null) {
       await connectDB();
       const hashpassword = bcryptjs.hashSync(password, 5);
