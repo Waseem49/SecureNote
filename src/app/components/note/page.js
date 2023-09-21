@@ -4,7 +4,6 @@ import styles from "@/app/components/note/note.module.css";
 import { MyContext } from "@/app/context/contextapi";
 
 const Note = () => {
-  //const url="h/"
   const { auth, setAuth } = useContext(MyContext);
   const [note, setNote] = useState("");
   const [notes, setNotes] = useState([]);
@@ -43,13 +42,16 @@ const Note = () => {
   const handleAddOrUpdate = async () => {
     if (!id) {
       try {
-        const res = await fetch("https://note-app-waseem49.vercel.app/api/note", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ note }),
-        });
+        const res = await fetch(
+          "https://note-app-waseem49.vercel.app/api/note",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ note }),
+          }
+        );
 
         if (!res.ok) {
           throw new Error("Failed to add note");
@@ -61,13 +63,16 @@ const Note = () => {
       }
     } else {
       try {
-        const res = await fetch(`https://note-app-waseem49.vercel.app/api/note/${id}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ note }),
-        });
+        const res = await fetch(
+          `https://note-app-waseem49.vercel.app/api/note/${id}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ note }),
+          }
+        );
 
         if (!res.ok) {
           throw new Error("Failed to update note");
@@ -96,7 +101,9 @@ const Note = () => {
 
   const handleEdit = async (id) => {
     try {
-      const res = await fetch(`https://note-app-waseem49.vercel.app/api/note/${id}`);
+      const res = await fetch(
+        `https://note-app-waseem49.vercel.app/api/note/${id}`
+      );
       const data = await res.json();
       setNote(data.data.note);
       setId(id);
