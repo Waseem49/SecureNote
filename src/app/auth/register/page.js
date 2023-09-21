@@ -22,14 +22,11 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(
-      "https://note-app-waseem49.vercel.app/api/auth/register",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
-      }
-    );
+    const res = await fetch("http://localhost:3000/api/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    });
     if (res.ok) {
       router.push("/auth/login");
     }

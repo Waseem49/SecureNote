@@ -1,12 +1,9 @@
 // db.js
 import mongoose from "mongoose";
 
-const MONGODB_URI =
-  "mongodb+srv://mdwaseem:mdwaseem@cluster0.tdsn7wd.mongodb.net/note_app";
-
 const connectDB = async () => {
   try {
-    await mongoose.connect(MONGODB_URI, {
+    await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       serverSelectionTimeoutMS: 30000,

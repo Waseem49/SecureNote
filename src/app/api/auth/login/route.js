@@ -17,6 +17,7 @@ export const POST = async (req) => {
           { _id: User._id, name: User.name },
           process.env.SECRET_KEY
         );
+
         const response = NextResponse.json(
           { message: "Login Successfully", token: token },
           { status: 201 }

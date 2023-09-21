@@ -11,7 +11,7 @@ export const POST = async (req) => {
     const { name } = await verify(token, process.env.SECRET_KEY);
     const data = { note: reqbody.note, username: name };
     const note = await noteModal.create(data);
-    console.log(note);
+
     return NextResponse.json(
       { data: note, message: "Created Successfully" },
       { status: 201 }
