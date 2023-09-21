@@ -9,7 +9,7 @@ const Navbar = () => {
   console.log(auth);
   const router = useRouter();
   const handlelogout = async (e) => {
-    const res = await fetch("http://localhost:3000/api/auth/logout", {
+    const res = await fetch("/api/auth/logout", {
       method: "POST",
     });
     if (res.ok) {
