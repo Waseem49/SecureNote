@@ -7,9 +7,9 @@ import bcryptjs from "bcryptjs";
 export const POST = async (req) => {
   try {
     const { name, email, password } = await req.json();
+    await connectDB();
     const existingUser = await userModal.findOne({ email: email });
     if (existingUser === null) {
-      await connectDB();
       const hashpassword = bcryptjs.hashSync(password, 5);
       const user = await userModal.create({
         name,

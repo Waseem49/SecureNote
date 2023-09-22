@@ -5,16 +5,14 @@ import { MyContext } from "@/app/context/contextapi";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 const Navbar = () => {
-  const { auth } = useContext(MyContext);
-  console.log(auth);
+  const { auth } = useContext(MyContext);;
   const router = useRouter();
   const handlelogout = async (e) => {
     const res = await fetch("/api/auth/logout", {
       method: "POST",
     });
     if (res.ok) {
-      const data = await res.json();
-      router.push("/auth/login");
+      router.push("/login");
     }
   };
   return (
