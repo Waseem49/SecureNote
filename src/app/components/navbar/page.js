@@ -9,7 +9,7 @@ const Navbar = () => {
   console.log(auth);
   const router = useRouter();
   const handlelogout = async (e) => {
-    const res = await fetch("https://note-app-waseem49.vercel.app/api/auth/logout", {
+    const res = await fetch("/api/auth/logout", {
       method: "POST",
     });
     if (res.ok) {
@@ -27,7 +27,9 @@ const Navbar = () => {
           height={40}
         />
       </div>
-      <div className={styles.logout} onClick={handlelogout}>{auth ? "Logout" : "Login"}</div>
+      <div className={styles.logout} onClick={handlelogout}>
+        {auth ? "Logout" : "Login"}
+      </div>
     </div>
   );
 };
