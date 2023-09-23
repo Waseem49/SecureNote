@@ -16,7 +16,7 @@
 <p align="center">  
   <img src="https://img.shields.io/badge/Vercel-00C7B7?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel" />
 </p>
-<h3 align="center"><a href="https://secure-note-waseem49.vercel.app/" target="blink"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://secure-note-waseem49.vercel.app/" target="_blank"><strong>Want to see live preview »</strong></a></h3>
 <br />
 <br />
 "Developed a feature-rich note-taking web application called 'SecureNote' using a full-stack tech-stack like Next.js, React.js, MongoDB, Json-web-Token, Bcypt. Users can register, log in securely, and create, edit, or delete their notes. The app leverages user authentication, MongoDB for data storage, and integrates encryption of passwoord with bcryptjs . This project demonstrates proficiency in web development, database management, and user authentication, showcasing a strong commitment to building secure and user-friendly applications."
