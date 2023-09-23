@@ -34,7 +34,9 @@
 <br />
 <h1 align="center"> 🏷️ Mobile Views of Register & Login Page </h1>
 <p display="flex" align="center">
+   
 <img src="https://github.com/Waseem49/note_app/assets/111652485/5be0205f-a8ee-4e59-a436-d40e31bc0bf1" width="auto" alt="Register page"/>
+
 <img src="https://github.com/Waseem49/note_app/assets/111652485/248cd642-baa2-49bd-9e4a-ed952783de80" width="auto" alt="Login page"/>
 </p>
 <h1 align="center"> 🏷️ Mobile Views of Note Page </h1>
@@ -43,16 +45,18 @@
 <p />
 <br />
 <h1 align="center"> 🏷️ Desktop View of Note, Login and Register Page</h1>
-<img src="https://github.com/Waseem49/note_app/assets/111652485/2872bc63-c4bb-4aec-818e-eecef7912cd1" width="auto" alt="Cart Modal with product"/>
+<img src="https://github.com/Waseem49/SecureNote/assets/111652485/396ca5fd-ce42-413f-b5a0-d03a083b1b33" width="auto" alt="note"/>
 <br />
-<img src="https://github.com/Waseem49/note_app/assets/111652485/f8e6d14c-e03d-4b83-b124-3088cb19f67d" width="auto" alt="Cart Modal with product"/>
+<img src="https://github.com/Waseem49/SecureNote/assets/111652485/ca6cc3c6-ca22-4b64-bc81-695c4138f41d" width="auto" alt="Cart Modal with product"/>
 <br />
-<img src="https://github.com/Waseem49/note_app/assets/111652485/41757e5e-ea28-4d26-a092-d1a5330717b4" width="auto" alt="Cart Modal with product"/>
+<img src="https://github.com/Waseem49/SecureNote/assets/111652485/41d3358f-1800-4359-aab5-d8a3d69c7d92" width="auto" alt="Cart Modal with product"/>
 <br />
 <br />
 <br />
 <h2 >Contact</h2>
+   
 If you want to contact me, you can reach me through below handles. <br />
+   
 [![linkedin](https://img.shields.io/badge/Md_Waseem_Akram-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/waseem49/)
 [![GitHub](https://img.shields.io/badge/Md_Waseem_Akram-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/Waseem49)
 
