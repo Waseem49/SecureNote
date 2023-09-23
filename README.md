@@ -21,7 +21,7 @@
   <img src="https://img.shields.io/badge/Vercel-00C7B7?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel" />
 </p>
 
-<h3 align="center"><a href="https://note-app-waseem49.vercel.app/" target=”_blank”><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://secure-note-waseem49.vercel.app/" target="blink"><strong>Want to see live preview »</strong></a></h3>
 
 <br />
 <br />
