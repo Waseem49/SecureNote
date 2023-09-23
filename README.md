@@ -14,7 +14,6 @@
 </p>
 <h4 align="center">Deployed On:</h4>
 <p align="center">  
-<!--   <a href="https://ebn-waseem49.vercel.app/" blink> </a> -->
   <img src="https://img.shields.io/badge/Vercel-00C7B7?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel" />
 </p>
 <h3 align="center"><a href="https://secure-note-waseem49.vercel.app/" target="blink"><strong>Want to see live preview »</strong></a></h3>
@@ -34,14 +33,12 @@
 <br />
 <h1 align="center"> 🏷️ Mobile Views of Register & Login Page </h1>
 <p display="flex" align="center">
-   
-<img src="https://github.com/Waseem49/note_app/assets/111652485/5be0205f-a8ee-4e59-a436-d40e31bc0bf1" width="auto" alt="Register page"/>
-
-<img src="https://github.com/Waseem49/note_app/assets/111652485/248cd642-baa2-49bd-9e4a-ed952783de80" width="auto" alt="Login page"/>
+<img src="https://github.com/Waseem49/SecureNote/assets/111652485/99f810df-71d9-4c01-b8c1-32edec8cf45a" width="auto" alt="Register page"/>
+<img src="https://github.com/Waseem49/SecureNote/assets/111652485/1e14d210-0248-47d4-9ad4-737cd8cee8eb" width="auto" alt="Login page"/>
 </p>
 <h1 align="center"> 🏷️ Mobile Views of Note Page </h1>
 <p display="flex" align="center">
-<img src="https://github.com/Waseem49/note_app/assets/111652485/f2558761-be25-47f9-8d27-501cb6c02342" width="auto" alt="Note page"/>
+<img src="https://github.com/Waseem49/SecureNote/assets/111652485/31aac927-68c7-4bf0-ae9b-39c8dec18968" width="auto" alt="Note page"/>
 <p />
 <br />
 <h1 align="center"> 🏷️ Desktop View of Note, Login and Register Page</h1>
@@ -53,13 +50,12 @@
 <br />
 <br />
 <br />
-<h2 >Contact</h2>
-   
-If you want to contact me, you can reach me through below handles. <br />
+<h2 >Contact</h2>   
+If you want to contact me, you can reach me through below handles. 
+<br />
    
 [![linkedin](https://img.shields.io/badge/Md_Waseem_Akram-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/waseem49/)
 [![GitHub](https://img.shields.io/badge/Md_Waseem_Akram-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/Waseem49)
-
 © 2023 Md Waseem Akram
 
 ## Show your support
